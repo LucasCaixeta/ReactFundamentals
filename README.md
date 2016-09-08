@@ -4,6 +4,8 @@ Here I will list all my followed steps into my 'react' adventure :-)
 After finish, I will detail all steps one my one, with some explanations and hints to make easy understant more about react.
 I start to save my progress at lesson 8, but I'll put 1-7 soon.
 
+There are a branch for each lesson with all source code.
+
 # Lessons learned about React.Js
 ### 8-react-accessing-child-properties
     TODO: Detail.
