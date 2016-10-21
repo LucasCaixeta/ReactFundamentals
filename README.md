@@ -20,4 +20,5 @@ There is a branch for each lesson with all source code: https://github.com/Lucas
     TODO: Detail.
     
 ### 12-higher-order-components-replaces-mixins
-    TODO: Detail.
+    Was created a Mixin component to be used by subcomponents (button and label). 
+    Interesting to see how a single structure may be used to compose many other components, sharing the same behavior.
