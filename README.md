@@ -18,3 +18,6 @@ There is a branch for each lesson with all source code: https://github.com/Lucas
   
 ### 11-react-component-lifecycle-updating
     TODO: Detail.
+    
+### 12-higher-order-components-replaces-mixins
+    TODO: Detail.
