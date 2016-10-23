@@ -1,57 +1,50 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
-let Mixin = InnerComponent => class extends React.Component {
+class App extends React.Component {
   constructor() {
     super();
+    this.state = {
+      red: 0
+    };
     this.update = this.update.bind(this);
-    this.state = {val: 0};
   }
 
   update() {
-    this.setState({val: this.state.val + 1});
+    this.setState({
+      red: ReactDOM.findDOMNode(this.refs.red.refs.inp).value
+    });
   }
 
-  componentWillMount() {
-    console.log('will mount');
-  }
-
-  render() {
-    return <InnerComponent
-      update={this.update}
-      {...this.state}
-      {...this.props} />
-  }
-
-  componentDidUpdate() {
-    console.log('mounted');
-  }
-};
-
-const Button = (props) => <button
-                            onClick={props.update}>
-                            {props.txt} - {props.val}
-                          </button>;
-
-const Label = (props) => <label
-                          onMouseMove={props.update}>
-                          {props.txt} - {props.val}
-                        </label>;
-
-let ButtonMixed = Mixin(Button);
-let LabelMixed = Mixin(Label);
-
-class App extends React.Component {
   render() {
     return (
       <div>
-        <ButtonMixed txt="Button"/>
-        <LabelMixed  txt="Label"/>
+        <NumInput ref="red" update={this.update}/>
+        {this.state.red}
+        <br/>
+      </div>
+    );
+  }
+};
+
+class NumInput extends React.Component {
+  render() {
+    return (
+      <div>
+       <input
+         ref="inp"
+         type="range"
+         min="0"
+         max="255"
+         onChange={this.props.update}
+       />
       </div>
     )
   }
 }
 
-// Default props value
-App.defaultProps = {txt: 'button'};
+NumInput.propTypes = {
+
+}
 
 export default App
